@@ -1,0 +1,24 @@
+mixin Logger {
+  void log(String msg) {
+    print('[LOG]: $msg');
+  }
+}
+
+mixin Printer {
+  void printData(String data) {
+    print('[DATA]: $data');
+  }
+}
+
+class Report with Logger, Printer {
+  void generateReport() {
+    print('Report generated.');
+  }
+}
+
+void main() {
+  Report report = Report();
+  report.log('Report started');
+  report.printData('Some data here');
+  report.generateReport();
+}
